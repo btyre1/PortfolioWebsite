@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'myapp'  # added my app here so Django knows about it
+    "myapp"  # added my app here so Django knows about it, "" doulble quotes for what I added and isn't there by default
 ]
 
 MIDDLEWARE = [
