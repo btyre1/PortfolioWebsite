@@ -1,2 +1,12 @@
 # Virutal environment
 /venv
+
+# Python cache files
+__pycache__/
+
+# Django stuff
+*.pyc
+db.sqlite3
+
+# macOS
+.DS_Store
