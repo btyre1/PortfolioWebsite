@@ -1,3 +1,5 @@
+# portfolio_site/main/models.py
+
 from django.db import models
 
 class Skill(models.Model):

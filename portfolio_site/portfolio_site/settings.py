@@ -1,3 +1,5 @@
+# portfolio_site/portfolio_site/settings.py
+
 """
 Django settings for portfolio_site project.
 

@@ -1,3 +1,5 @@
+# portfolio_site/main/apps.py
+
 from django.apps import AppConfig
 
 

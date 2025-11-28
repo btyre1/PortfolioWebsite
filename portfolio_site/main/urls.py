@@ -1,3 +1,5 @@
+# portfolio_site/main/urls.py
+
 from django.urls import path
 from . import views  # lets me connect URLs to my view functions
 

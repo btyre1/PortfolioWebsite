@@ -1,3 +1,5 @@
+# portfolio_site/portfolio_site/wsgi.py
+
 """
 WSGI config for portfolio_site project.
 
