@@ -3,6 +3,16 @@
 {% extends "main/base.html" %}
 
 {% block content %}
-<h1>My Portfolio</h1>
-<p>Welcome to my site.</p>
+<h1>My Projects</h1>
+
+{% for project in projects %}
+    <div>
+        <h2>{{ project.title }}</h2>
+        <p>{{ project.short_desc }}</p>
+        <a href="{% url 'project_detail' project.slug %}">View Project</a>
+    </div>
+{% empty %}
+    <p>No projects yet.</p>
+{% endfor %}
 {% endblock %}
+

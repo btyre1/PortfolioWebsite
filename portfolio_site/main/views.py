@@ -9,3 +9,9 @@ def home(request):
     return render(request, "main/home.html", {  # This will render the home.html page
         "projects": projects,  # send data to template
     })
+
+def project_detail(request, slug): # view function for project detail page
+    project = Project.objects.get(slug=slug)
+    return render(request, "main/project_detail.html", {
+        "project": project
+    })
