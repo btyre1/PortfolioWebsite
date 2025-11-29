@@ -1,0 +1,18 @@
+<!-- portfolio_site/main/templates/main/projects.html -->
+
+{% extends "base.html" %}
+{% block title %}Projects{% endblock %}
+
+{% block content %}
+<h2 class="page-title">Projects</h2>
+
+<div class="card-grid">
+    {% for project in projects %}
+    <div class="card">
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.description }}</p>
+        <a class="btn-secondary" href="{% url 'project_detail' project.slug %}">View Details</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

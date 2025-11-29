@@ -1,18 +1,12 @@
 <!--portfolio_site/main/templates/main/home.html--> 
 
-{% extends "main/base.html" %}
+{% extends "base.html" %}
+{% block title %}Home - My Portfolio{% endblock %}
 
 {% block content %}
-<h1>My Projects</h1>
-
-{% for project in projects %}
-    <div>
-        <h2>{{ project.title }}</h2>
-        <p>{{ project.short_desc }}</p>
-        <a href="{% url 'project_detail' project.slug %}">View Project</a>
-    </div>
-{% empty %}
-    <p>No projects yet.</p>
-{% endfor %}
+<section class="hero">
+    <h1>Hello, I'm Bryce 🧑‍💻</h1>
+    <p>Welcome to my personal portfolio — showcasing my projects, skills, and experience.</p>
+    <a href="/projects/" class="btn-primary">View My Projects</a>
+</section>
 {% endblock %}
-

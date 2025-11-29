@@ -1,0 +1,141 @@
+/* portfolio_site/main/static/main/style.css */
+
+/* ===== BASIC RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: #f4f5f7;
+    color: #1e1e1e;
+    line-height: 1.6;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+    background: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+.nav-brand {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #1e1e1e;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #4a78ff;
+}
+
+/* ===== MAIN CONTENT ===== */
+.content {
+    padding: 2rem 3rem;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+.btn-primary {
+    padding: 0.7rem 1.5rem;
+    background: #4a78ff;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background: #3a61d9;
+}
+
+/* ===== CARD GRID ===== */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: white;
+    padding: 1.4rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.btn-secondary {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #4a78ff;
+    color: #4a78ff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-secondary:hover {
+    background: #4a78ff;
+    color: white;
+}
+
+/* ===== SKILLS ===== */
+.skill-list {
+    max-width: 600px;
+    margin: auto;
+}
+
+.skill-item {
+    margin-bottom: 1.2rem;
+}
+
+.skill-bar {
+    background: #e1e4ea;
+    height: 10px;
+    border-radius: 5px;
+}
+
+.skill-fill {
+    height: 100%;
+    background: #4a78ff;
+    border-radius: 5px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    margin-top: 4rem;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: #555;
+}

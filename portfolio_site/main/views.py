@@ -1,6 +1,7 @@
 # portfolio_site/main/views.py
 
 from django.shortcuts import render, HttpResponse
+from .models import Project   # Forgot to add this import for Project model, which caused error
 
 # Create your views here.
 

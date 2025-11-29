@@ -1,0 +1,19 @@
+<!-- portfolio_site/main/templates/main/skills.html -->
+
+{% extends "base.html" %}
+{% block title %}Skills{% endblock %}
+
+{% block content %}
+<h2 class="page-title">Skills</h2>
+
+<div class="skill-list">
+    {% for skill in skills %}
+        <div class="skill-item">
+            <span>{{ skill.name }}</span>
+            <div class="skill-bar">
+                <div class="skill-fill" style="width: {{ skill.level }}%;"></div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
