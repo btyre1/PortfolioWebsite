@@ -18,13 +18,17 @@ body {
 .navbar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 1rem 3rem;
     background: #ffffff;
     border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .nav-brand {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
@@ -38,6 +42,7 @@ body {
     text-decoration: none;
     color: #1e1e1e;
     font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -47,6 +52,8 @@ body {
 /* ===== MAIN CONTENT ===== */
 .content {
     padding: 2rem 3rem;
+    max-width: 1200px;
+    margin: auto;
 }
 
 /* ===== HERO SECTION ===== */
@@ -57,11 +64,12 @@ body {
 
 .hero h1 {
     font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
 .hero p {
     font-size: 1.2rem;
-    margin: 1rem 0;
+    margin-bottom: 2rem;
 }
 
 .btn-primary {
@@ -70,6 +78,7 @@ body {
     color: white;
     border-radius: 6px;
     text-decoration: none;
+    transition: background 0.3s ease;
 }
 
 .btn-primary:hover {
@@ -87,7 +96,13 @@ body {
     background: white;
     padding: 1.4rem;
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
 }
 
 .card h3 {
@@ -102,6 +117,7 @@ body {
     color: #4a78ff;
     border-radius: 5px;
     text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 .btn-secondary:hover {
@@ -109,26 +125,92 @@ body {
     color: white;
 }
 
-/* ===== SKILLS ===== */
-.skill-list {
-    max-width: 600px;
-    margin: auto;
+/* ===== PROJECT DETAIL PAGE ===== */
+.detail-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    margin: 2rem auto;
 }
 
-.skill-item {
-    margin-bottom: 1.2rem;
+.detail-container h1 {
+    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+}
+
+.project-thumbnail,
+.project-gallery {
+    margin-bottom: 2rem;
+}
+
+.project-thumbnail img,
+.project-gallery img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    display: block;
+    margin: 1rem auto;
+}
+
+.project-long-desc {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.detail-section h3,
+.project-tags h4 {
+    margin-bottom: 1rem;
+}
+
+.detail-section ul,
+.project-tags ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+.detail-section li,
+.project-tags li {
+    margin-bottom: 0.5rem;
+}
+
+/* Add spacing between GitHub link and sections */
+.detail-container > p,
+.detail-section,
+.project-tags {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* ===== SKILLS ===== */
+.skills-container {
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.skill {
+    margin-bottom: 1.5rem;
+}
+
+.skill-name {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
 }
 
 .skill-bar {
     background: #e1e4ea;
-    height: 10px;
-    border-radius: 5px;
+    height: 12px;
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 .skill-fill {
     height: 100%;
     background: #4a78ff;
-    border-radius: 5px;
+    border-radius: 6px;
     transition: width 1s ease-in-out;
 }
 
@@ -136,7 +218,29 @@ body {
 .footer {
     margin-top: 4rem;
     text-align: center;
-    padding: 1rem;
+    padding: 2rem 0;
     font-size: 0.9rem;
     color: #555;
+    background: #fff;
+    border-top: 1px solid #ddd;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .content {
+        padding: 1rem 2rem;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-thumbnail img,
+    .project-gallery img {
+        max-width: 100%;
+    }
 }

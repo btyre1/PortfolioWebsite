@@ -28,9 +28,6 @@
             {% for img in project.images.all %}
                 <div class="gallery-item">
                     <img src="{{ img.image.url }}" alt="{{ img.caption }}">
-                    {% if img.caption %}
-                        <p class="caption">{{ img.caption }}</p>
-                    {% endif %}
                 </div>
             {% endfor %}
         </div>
@@ -38,7 +35,11 @@
 
     <!-- GitHub / External Link -->
     {% if project.github_url %}
-        <p><a href="{{ project.github_url }}" target="_blank" class="btn-primary">View on GitHub</a></p>
+        <p>
+            <a href="{{ project.github_url }}" target="_blank" class="btn-primary">
+                View on GitHub
+            </a>
+        </p>
     {% endif %}
 
     <!-- Technologies Used -->
@@ -67,6 +68,6 @@
 
     <!-- Back Button -->
     <a href="/projects/" class="btn-secondary">Back to Projects</a>
+
 </div>
 {% endblock %}
-
