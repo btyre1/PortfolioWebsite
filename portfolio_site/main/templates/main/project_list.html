@@ -3,13 +3,33 @@
 {% extends "main/base.html" %}
 
 {% block content %}
-<h1>Projects</h1>
+<h1 class="page-title">Projects</h1>
 
-<ul>
-    {% for p in projects %}
-        <li>
-            <a href="{% url 'project_detail' p.slug %}">{{ p.title }}</a>
-        </li>
+<!-- Filter buttons -->
+<div class="filter-buttons">
+    <button class="filter-btn" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="python">Python</button>
+    <button class="filter-btn" data-filter="django">Django</button>
+    <button class="filter-btn" data-filter="socket">Socket</button>
+    <button class="filter-btn" data-filter="firebase">Firebase</button>
+    <button class="filter-btn" data-filter="pandas">Pandas</button>
+</div>
+
+<!-- Project Cards -->
+<div class="card-grid">
+    {% for project in projects %}
+    <div class="card" data-tech="{{ project.tech_stack|lower }}">
+        <div class="card-thumbnail">
+            {% if project.thumbnail %}
+                <img src="{{ project.thumbnail.url }}" alt="{{ project.title }}">
+            {% endif %}
+        </div>
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.short_desc }}</p>
+        <a class="btn-secondary" href="{% url 'project_detail' project.slug %}">View Details</a>
+    </div>
     {% endfor %}
-</ul>
+</div>
+
 {% endblock %}
+
