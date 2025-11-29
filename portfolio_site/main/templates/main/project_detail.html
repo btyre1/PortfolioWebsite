@@ -1,23 +1,71 @@
 <!--portfolio_site/main/templates/main/project_detail.html--> 
 
 {% extends "main/base.html" %}
+
 {% block title %}{{ project.title }}{% endblock %}
 
 {% block content %}
 <div class="detail-container">
+
+    <!-- Project Title -->
     <h1>{{ project.title }}</h1>
-    <p class="detail-desc">{{ project.description }}</p>
 
-    <div class="detail-section">
-        <h3>Technologies Used</h3>
-        <ul>
-            {% for tech in tech_list %}
-                <li>{{ tech }}</li>
+    <!-- Project Thumbnail -->
+    {% if project.thumbnail %}
+        <div class="project-thumbnail">
+            <img src="{{ project.thumbnail.url }}" alt="{{ project.title }}">
+        </div>
+    {% endif %}
+
+    <!-- Long Description -->
+    {% if project.long_desc %}
+        <p class="project-long-desc">{{ project.long_desc }}</p>
+    {% endif %}
+
+    <!-- Project Gallery -->
+    {% if project.images.all %}
+        <div class="project-gallery">
+            {% for img in project.images.all %}
+                <div class="gallery-item">
+                    <img src="{{ img.image.url }}" alt="{{ img.caption }}">
+                    {% if img.caption %}
+                        <p class="caption">{{ img.caption }}</p>
+                    {% endif %}
+                </div>
             {% endfor %}
-        </ul>
+        </div>
+    {% endif %}
 
-    </div>
+    <!-- GitHub / External Link -->
+    {% if project.github_url %}
+        <p><a href="{{ project.github_url }}" target="_blank" class="btn-primary">View on GitHub</a></p>
+    {% endif %}
 
+    <!-- Technologies Used -->
+    {% if tech_list %}
+        <div class="detail-section">
+            <h3>Technologies Used</h3>
+            <ul>
+                {% for tech in tech_list %}
+                    <li>{{ tech }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    <!-- Tags -->
+    {% if tag_list %}
+        <div class="project-tags">
+            <h4>Tags:</h4>
+            <ul>
+                {% for tag in tag_list %}
+                    <li>{{ tag }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    <!-- Back Button -->
     <a href="/projects/" class="btn-secondary">Back to Projects</a>
 </div>
 {% endblock %}
