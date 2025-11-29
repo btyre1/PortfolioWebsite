@@ -1,1 +1,21 @@
 <!--portfolio_site/main/templates/main/project_detail.html--> 
+
+{% extends "main/base.html" %}
+
+{% block content %}
+<h1>{{ project.title }}</h1>
+<p>{{ project.long_desc }}</p>
+
+{% if project.thumbnail %}
+    <img src="{{ project.thumbnail.url }}" alt="thumbnail">
+{% endif %}
+
+<h3>Tech Used</h3>
+<p>{{ project.tech_stack }}</p>
+
+<h3>Images</h3>
+{% for img in project.images.all %}
+    <img src="{{ img.image.url }}" alt="">
+    <p>{{ img.caption }}</p>
+{% endfor %}
+{% endblock %}
