@@ -10,16 +10,18 @@
     <title>{% block title %}My Portfolio{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-<body>
 
-    <nav class="navbar">
-        <div class="nav-brand">MyPortfolio</div>
-        <ul class="nav-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/projects/">Projects</a></li>
-            <li><a href="/skills/">Skills</a></li>
-        </ul>
-    </nav>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">MyPortfolio</div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/projects/">Projects</a></li>
+                <li><a href="/skills/">Skills</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main class="content">
         {% block content %}{% endblock %}

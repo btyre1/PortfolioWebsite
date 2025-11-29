@@ -4,14 +4,26 @@
 {% block title %}Projects{% endblock %}
 
 {% block content %}
-<h2 class="page-title">Projects</h2>
+<h2 class="page-title">My Projects</h2>
 
-<div class="card-grid">
+<div class="projects-grid">
     {% for project in projects %}
-    <div class="card">
-        <h3>{{ project.title }}</h3>
-        <p>{{ project.short_desc }}</p>
-        <a class="btn-secondary" href="{% url 'project_detail' project.slug %}">View Details</a>
+    <div class="project-card" data-aos="fade-up">
+        
+        {% if project.thumbnail %}
+        <div class="project-card-img">
+            <img src="{{ project.thumbnail.url }}" alt="{{ project.title }}">
+        </div>
+        {% endif %}
+
+        <div class="project-card-body">
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.short_desc }}</p>
+
+            <a class="btn-secondary" href="{% url 'project_detail' project.slug %}">
+                View Details →
+            </a>
+        </div>
     </div>
     {% endfor %}
 </div>
