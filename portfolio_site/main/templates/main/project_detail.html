@@ -11,8 +11,8 @@
     <div class="detail-section">
         <h3>Technologies Used</h3>
         <ul>
-            {% for tech in project.tech_stack.split(',') %}
-            <li>{{ tech }}</li>
+            {% for tech in tech_list %}
+                <li>{{ tech }}</li>
             {% endfor %}
         </ul>
 

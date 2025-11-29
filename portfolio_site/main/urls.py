@@ -7,4 +7,5 @@ urlpatterns = [
     path("", views.home, name="home"), # This connects the homepage URL to the home view
     path("project/<slug:slug>/", views.project_detail, name="project_detail"), # URL pattern for project detail view
     path("skills/", views.skills_view, name="skills"),  # URL pattern for skills view
+    path("projects/", views.project_list, name="project_list"), # URL pattern for project list view
 ]

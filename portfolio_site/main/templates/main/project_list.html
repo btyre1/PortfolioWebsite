@@ -1,0 +1,15 @@
+<!-- portfolio_site/main/templates/main/project_list.html -->
+
+{% extends "main/base.html" %}
+
+{% block content %}
+<h1>Projects</h1>
+
+<ul>
+    {% for p in projects %}
+        <li>
+            <a href="{% url 'project_detail' p.slug %}">{{ p.title }}</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

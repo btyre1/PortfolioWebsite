@@ -13,8 +13,13 @@ def home(request):
 
 def project_detail(request, slug): # view function for project detail page
     project = get_object_or_404(Project, slug=slug)
-    return render(request, "main/project_detail.html", {"project": project})
+    tech_list = project.tech_stack.split(",")
+    return render(request, "main/project_detail.html", {"project": project, "tech_list": tech_list})
 
 def skills_view(request): # view function for skills page
     skills = Skill.objects.all()  # fetch all skills
     return render(request, "main/skills.html", {"skills": skills})
+
+def project_list(request): # view function for project list page
+    projects = Project.objects.all()
+    return render(request, "main/project_list.html", {"projects": projects})
