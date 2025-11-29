@@ -1,19 +1,21 @@
 <!-- portfolio_site/main/templates/main/skills.html -->
 
-{% extends "base.html" %}
-{% block title %}Skills{% endblock %}
+{% extends "main/base.html" %}
 
 {% block content %}
-<h2 class="page-title">Skills</h2>
+<h1>My Skills</h1>
 
-<div class="skill-list">
+<div class="skills-container">
     {% for skill in skills %}
-        <div class="skill-item">
-            <span>{{ skill.name }}</span>
+        <div class="skill">
+            <div class="skill-name">{{ skill.name }}</div>
             <div class="skill-bar">
-                <div class="skill-fill" style="width: {{ skill.level }}%;"></div>
+                {# stylelint-disable-next-line #}
+                <div class="skill-fill" style="width: {{ skill.level|default:0 }}%"></div>
             </div>
         </div>
+    {% empty %}
+        <p>No skills added yet.</p>
     {% endfor %}
 </div>
 {% endblock %}

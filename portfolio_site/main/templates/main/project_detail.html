@@ -11,10 +11,11 @@
     <div class="detail-section">
         <h3>Technologies Used</h3>
         <ul>
-            {% for tech in project.technologies.all %}
-            <li>{{ tech.name }}</li>
+            {% for tech in project.tech_stack.split(',') %}
+            <li>{{ tech }}</li>
             {% endfor %}
         </ul>
+
     </div>
 
     <a href="/projects/" class="btn-secondary">Back to Projects</a>

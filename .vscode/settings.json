@@ -1,0 +1,12 @@
+// .vscode/settings.json
+
+{
+  "css.lint.validProperties": [
+    "composes"
+  ],
+  "[html]": {
+    "css.lint.compatibleVendorPrefixes": "warning",
+    "css.lint.vendorPrefix": "warning"
+  },
+  "css.validate": false
+}

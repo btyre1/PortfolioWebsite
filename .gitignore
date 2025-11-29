@@ -12,3 +12,6 @@ db.sqlite3
 
 # macOS
 .DS_Store
+
+# Media files
+media/

@@ -1,7 +1,7 @@
 # portfolio_site/main/views.py
 
-from django.shortcuts import render, HttpResponse
-from .models import Project   # Forgot to add this import for Project model, which caused error
+from django.shortcuts import render, HttpResponse, get_object_or_404   # get_object_or_404 helps to handle 404 errors gracefully
+from .models import Project, Skill   # Forgot to add this import for Project model, which caused error
 
 # Create your views here.
 
@@ -12,7 +12,9 @@ def home(request):
     })
 
 def project_detail(request, slug): # view function for project detail page
-    project = Project.objects.get(slug=slug)
-    return render(request, "main/project_detail.html", {
-        "project": project
-    })
+    project = get_object_or_404(Project, slug=slug)
+    return render(request, "main/project_detail.html", {"project": project})
+
+def skills_view(request): # view function for skills page
+    skills = Skill.objects.all()  # fetch all skills
+    return render(request, "main/skills.html", {"skills": skills})
