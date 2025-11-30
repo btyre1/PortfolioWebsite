@@ -1,28 +1,37 @@
 <!--portfolio_site/main/templates/main/project_detail.html--> 
 
-{% extends "main/base.html" %}
+<!-- =========================================
+     PROJECT DETAIL PAGE TEMPLATE
+     Displays detailed information about a single project
+     ========================================= -->
 
+{% extends "main/base.html" %} <!-- Use base layout for consistent navbar/footer -->
+
+<!-- ===== PAGE TITLE ===== -->
 {% block title %}{{ project.title }}{% endblock %}
+<!-- Sets the browser tab title to the project title -->
 
 {% block content %}
 <div class="detail-container">
 
-    <!-- Project Title -->
+    <!-- ===== PROJECT TITLE ===== -->
     <h1>{{ project.title }}</h1>
 
-    <!-- Project Thumbnail -->
+    <!-- ===== PROJECT THUMBNAIL ===== -->
     {% if project.thumbnail %}
         <div class="project-thumbnail">
             <img src="{{ project.thumbnail.url }}" alt="{{ project.title }}">
         </div>
     {% endif %}
+    <!-- Displays main thumbnail if available -->
 
-    <!-- Long Description -->
+    <!-- ===== LONG DESCRIPTION ===== -->
     {% if project.long_desc %}
         <p class="project-long-desc">{{ project.long_desc }}</p>
     {% endif %}
+    <!-- Shows the full project description -->
 
-    <!-- Project Gallery -->
+    <!-- ===== PROJECT GALLERY ===== -->
     {% if project.images.all %}
         <div class="project-gallery">
             {% for img in project.images.all %}
@@ -32,8 +41,9 @@
             {% endfor %}
         </div>
     {% endif %}
+    <!-- Loop through additional project images if any -->
 
-    <!-- GitHub / External Link -->
+    <!-- ===== GITHUB / EXTERNAL LINK ===== -->
     {% if project.github_url %}
         <p>
             <a href="{{ project.github_url }}" target="_blank" class="btn-primary">
@@ -41,8 +51,9 @@
             </a>
         </p>
     {% endif %}
+    <!-- Displays GitHub or external link if provided -->
 
-    <!-- Technologies Used -->
+    <!-- ===== TECHNOLOGIES USED ===== -->
     {% if tech_list %}
         <div class="detail-section">
             <h3>Technologies Used</h3>
@@ -53,8 +64,9 @@
             </ul>
         </div>
     {% endif %}
+    <!-- Lists all technologies used in the project -->
 
-    <!-- Tags -->
+    <!-- ===== TAGS ===== -->
     {% if tag_list %}
         <div class="project-tags">
             <h4>Tags:</h4>
@@ -65,9 +77,11 @@
             </ul>
         </div>
     {% endif %}
+    <!-- Displays any tags associated with the project -->
 
-    <!-- Back Button -->
+    <!-- ===== BACK BUTTON ===== -->
     <a href="/projects/" class="btn-secondary">Back to Projects</a>
+    <!-- Link to return to the projects list -->
 
 </div>
 {% endblock %}

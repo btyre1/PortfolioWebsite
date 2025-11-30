@@ -1,37 +1,59 @@
 <!--portfolio_site/main/templates/main/base.html--> 
 
-{% load static %}
+<!-- =========================================
+     BASE TEMPLATE
+     This is the main layout for all pages in the portfolio.
+     It includes the navbar, theme toggle, main content block, and footer.
+     ========================================= -->
+
+{% load static %} <!-- Load Django static files (CSS, JS, images) -->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title block: can be overridden in child templates -->
     <title>{% block title %}My Portfolio{% endblock %}</title>
+
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="{% static 'main/style.css' %}">
+
+    <!-- Main JavaScript file (deferred to load after HTML) -->
     <script src="{% static 'main/script.js' %}" defer></script>
 </head>
 
 <body>
+    <!-- ===== HEADER / NAVBAR ===== -->
     <header>
         <nav class="navbar">
+            <!-- Brand / logo -->
             <div class="nav-brand">MyPortfolio</div>
 
+            <!-- Navigation links -->
             <ul class="nav-links">
                 <li><a href="/">Home</a></li>
                 <li><a href="/projects/">Projects</a></li>
                 <li><a href="/skills/">Skills</a></li>
             </ul>
-            <!-- THEME TOGGLE BUTTON -->
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button> <!-- Got idea from Tiktok & Dynamic Web Fundamentals class -->
+
+            <!-- Theme toggle button for dark/light mode -->
+            <!-- aria-label improves accessibility for screen readers -->
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+            <!-- Inspired by Tiktok & Dynamic Web Fundamentals class -->
         </nav>
     </header>
 
+    <!-- ===== MAIN CONTENT AREA ===== -->
+    <!-- Child templates will inject page-specific content here -->
     <main class="content">
         {% block content %}{% endblock %}
     </main>
 
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
+        <!-- Dynamically display current year -->
         © {{ now|date:"Y" }} My Portfolio
     </footer>
 

@@ -1,21 +1,37 @@
 <!-- portfolio_site/main/templates/main/skills.html -->
 
 {% extends "main/base.html" %}
+<!-- Extend base template to inherit navbar, footer, and general styles -->
 
 {% block content %}
-<h1>My Skills</h1>
 
+<!-- ===== PAGE TITLE ===== -->
+<h1>My Skills</h1>
+<!-- Heading for the skills section -->
+
+<!-- ===== SKILLS LIST ===== -->
 <div class="skills-container">
     {% for skill in skills %}
+    <!-- Loop through all skills -->
+
         <div class="skill">
+            <!-- Individual skill block -->
+
+            <!-- Skill Name -->
             <div class="skill-name">{{ skill.name }}</div>
+
+            <!-- Skill Level Bar -->
             <div class="skill-bar">
                 {# stylelint-disable-next-line #}
                 <div class="skill-fill" style="width: {{ skill.level|default:0 }}%"></div>
+                <!-- Inner bar filled proportionally to skill.level -->
             </div>
         </div>
     {% empty %}
+        <!-- Show message if no skills are available -->
         <p>No skills added yet.</p>
     {% endfor %}
 </div>
+
 {% endblock %}
+

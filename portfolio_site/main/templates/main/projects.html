@@ -1,30 +1,50 @@
 <!-- portfolio_site/main/templates/main/projects.html -->
 
 {% extends "main/base.html" %}
+<!-- Extend the base template to keep consistent navbar, footer, and styling -->
+
 {% block title %}Projects{% endblock %}
+<!-- Sets the page title in the browser tab -->
 
 {% block content %}
-<h2 class="page-title">My Projects</h2>
 
+<!-- ===== PAGE TITLE ===== -->
+<h2 class="page-title">My Projects</h2>
+<!-- Heading for the projects section -->
+
+<!-- ===== PROJECTS GRID ===== -->
 <div class="projects-grid">
     {% for project in projects %}
+    <!-- Loop through all projects -->
     <div class="project-card" data-aos="fade-up">
-        
+        <!-- Individual project card with animation on scroll -->
+
+        <!-- Project Thumbnail -->
         {% if project.thumbnail %}
         <div class="project-card-img">
             <img src="{{ project.thumbnail.url }}" alt="{{ project.title }}">
         </div>
         {% endif %}
+        <!-- Display project image if available -->
 
+        <!-- Project Info -->
         <div class="project-card-body">
             <h3>{{ project.title }}</h3>
-            <p>{{ project.short_desc }}</p>
+            <!-- Project title -->
 
+            <p>{{ project.short_desc }}</p>
+            <!-- Short description of the project -->
+
+            <!-- View Details Button -->
             <a class="btn-secondary" href="{% url 'project_detail' project.slug %}">
                 View Details →
             </a>
         </div>
+        <!-- End of project info -->
     </div>
     {% endfor %}
 </div>
+<!-- End of projects grid -->
+
 {% endblock %}
+

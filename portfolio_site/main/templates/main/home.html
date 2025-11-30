@@ -1,12 +1,28 @@
 <!--portfolio_site/main/templates/main/home.html--> 
 
-{% extends "main/base.html" %}
-{% block title %}Home - My Portfolio{% endblock %}
+<!-- =========================================
+     HOME PAGE TEMPLATE
+     Extends the base layout (base.html) and provides content for the home page.
+     ========================================= -->
+
+{% extends "main/base.html" %} <!-- Use the base layout for consistent navbar/footer -->
+
+<!-- ===== PAGE TITLE ===== -->
+{% block title %}Home - My Portfolio{% endblock %} 
+<!-- Overrides the <title> in base.html for the home page -->
 
 {% block content %}
+<!-- ===== HERO SECTION ===== -->
+<!-- Main welcome section shown at the top of the home page -->
 <section class="hero">
+    <!-- Main heading with greeting -->
     <h1>Hello, I'm Bryce 🧑‍💻</h1>
+
+    <!-- Short introductory text -->
     <p>Welcome to my personal portfolio — showcasing my projects, skills, and experience.</p>
+
+    <!-- Call-to-action button linking to projects page -->
     <a href="/projects/" class="btn-primary">View My Projects</a>
 </section>
 {% endblock %}
+

@@ -1,12 +1,17 @@
 <!-- portfolio_site/main/templates/main/project_list.html -->
 
 {% extends "main/base.html" %}
+<!-- Use base layout for consistent navbar/footer -->
 
 {% block content %}
-<h1 class="page-title">Projects</h1>
 
-<!-- Filter buttons -->
+<!-- ===== PAGE TITLE ===== -->
+<h1 class="page-title">Projects</h1>
+<!-- Heading for the projects page -->
+
+<!-- ===== FILTER BUTTONS ===== -->
 <div class="filter-buttons">
+    <!-- Each button filters projects by technology -->
     <button class="filter-btn" data-filter="all">All</button>
     <button class="filter-btn" data-filter="python">Python</button>
     <button class="filter-btn" data-filter="django">Django</button>
@@ -15,21 +20,31 @@
     <button class="filter-btn" data-filter="pandas">Pandas</button>
 </div>
 
-<!-- Project Cards -->
+<!-- ===== PROJECT CARDS ===== -->
 <div class="card-grid">
     {% for project in projects %}
     <div class="card" data-tech="{{ project.tech_stack|lower }}">
+        <!-- Card contains project info and filter data -->
+
+        <!-- Thumbnail -->
         <div class="card-thumbnail">
             {% if project.thumbnail %}
                 <img src="{{ project.thumbnail.url }}" alt="{{ project.title }}">
             {% endif %}
         </div>
+        <!-- Displays project image if available -->
+
+        <!-- Project Title -->
         <h3>{{ project.title }}</h3>
+
+        <!-- Short Description -->
         <p>{{ project.short_desc }}</p>
+
+        <!-- View Details Button -->
         <a class="btn-secondary" href="{% url 'project_detail' project.slug %}">View Details</a>
     </div>
     {% endfor %}
 </div>
+<!-- End of project cards grid -->
 
 {% endblock %}
-
