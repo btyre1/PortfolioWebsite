@@ -84,7 +84,7 @@ body {
 /* Primary CTA button */
 .btn-primary {
     padding: 0.7rem 1.5rem;
-    background: #4a78ff;
+    background: #3b5ed9;
     color: white;
     border-radius: 6px;
     text-decoration: none;
@@ -92,7 +92,7 @@ body {
 }
 
 .btn-primary:hover {
-    background: #3a61d9;
+    background: #000000;
 }
 
 /* =========================================
@@ -150,16 +150,17 @@ body {
     display: inline-block;
     margin-top: 1rem;
     padding: 0.5rem 1rem;
-    border: 1px solid #4a78ff;
-    color: #4a78ff;
+    border: 1px solid #3b5ed9;
+    color: #3b5ed9;
     border-radius: 5px;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .btn-secondary:hover {
-    background: #4a78ff;
-    color: white;
+    background: #000000;
+    color: #ffffff;;
+    border: #ffffff;
 }
 
 /* =========================================
@@ -286,9 +287,9 @@ body {
 
 .filter-btn {
     padding: 0.5rem 1rem;
-    border: 1px solid #4a78ff;
+    border: 1px solid #3b5ed9;
     background: white;
-    color: #4a78ff;
+    color: #3b5ed9;
     border-radius: 6px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -297,8 +298,9 @@ body {
 /* Selected + hover state */
 .filter-btn:hover,
 .filter-btn.active {
-    background: #4a78ff;
-    color: white;
+    background: #000000;
+    color: #ffffff;
+    border: #ffffff;
 }
 
 /* =========================================
@@ -384,28 +386,35 @@ body.dark .detail-container {
 body.dark .footer {
     background: #1f1f1f;
     border-top-color: #333;
+    color: #e5e5e5;
 }
 
 /* Buttons in dark mode */
 body.dark .btn-primary {
-    background: #6c8cff;
+    background: #3b5ed9;
+}
+
+body.dark .btn-primary:hover {
+    background: #ffffff;
+    color: black;
 }
 
 body.dark .btn-secondary {
-    border-color: #6c8cff;
-    color: #6c8cff;
+    border-color: #3b5ed9;
+    background: #000000;
+    color: #3b5ed9;
 }
 
 body.dark .btn-secondary:hover {
-    background: #6c8cff;
+    background: #3b5ed9;
     color: #fff;
 }
 
 /* Filter buttons in dark mode */
 body.dark .filter-btn {
-    background: #1f1f1f;
-    border-color: #6c8cff;
-    color: #6c8cff;
+    background: #000000;
+    border-color: #3a61d9;
+    color: #3a61d9;
 }
 
 body.dark .filter-btn.active,
