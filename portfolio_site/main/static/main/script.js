@@ -2,12 +2,12 @@
 
 /* =========================================
    MAIN SCRIPT
-   Handles project filtering, lightbox gallery, and dark mode toggle
+   Handles project filtering, lightbox gallery, and dark mode toggle (AI generated comment)
    ========================================= */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ===== PROJECT FILTER ===== */
+  /* ===== PROJECT FILTER (AI generated comment) ===== */
   // Select all filter buttons and project cards
   const filterBtns = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('.card');
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ===== LIGHTBOX (Got idea from Dynamic Web Fundamentals class) ===== */ 
+  /* ===== LIGHTBOX (Got idea from Dynamic Web Fundamentals class) (AI generated comment) ===== */ 
   // Dynamically create lightbox element and append to body 
   const lightbox = document.createElement('div');
   lightbox.id = 'lightbox';
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ===== DARK MODE TOGGLE ===== */
+  /* ===== DARK MODE TOGGLE (AI generated comment) ===== */
   const toggleBtn = document.getElementById('theme-toggle');
 
   // Only run if toggle button exists

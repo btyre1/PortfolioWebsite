@@ -23,7 +23,7 @@ The purpose of building this portfolio was to practice implementing CRUD functio
 
 # Development Environment
 
-- **Tools Used:** Visual Studio Code, Git, GitHub, SQLite, and the Django development server.
+- **Tools Used:** Visual Studio Code, Git, GitHub, SQLite, ChatGPT (for label comments, debugging, explaining concepts, and design assistance), and the Django development server.
 - **Programming Language:** Python (for the backend), HTML, CSS, and JavaScript.
 - **Libraries:** Django 5.2
 

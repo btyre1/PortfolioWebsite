@@ -2,22 +2,22 @@
 
 <!-- =========================================
      PROJECT DETAIL PAGE TEMPLATE
-     Displays detailed information about a single project
+     Displays detailed information about a single project (AI generated comment)
      ========================================= -->
 
 {% extends "main/base.html" %} <!-- Use base layout for consistent navbar/footer -->
 
-<!-- ===== PAGE TITLE ===== -->
+<!-- ===== PAGE TITLE (AI generated comment) ===== -->
 {% block title %}{{ project.title }}{% endblock %}
 <!-- Sets the browser tab title to the project title -->
 
 {% block content %}
 <div class="detail-container">
 
-    <!-- ===== PROJECT TITLE ===== -->
+    <!-- ===== PROJECT TITLE (AI generated comment) ===== -->
     <h1>{{ project.title }}</h1>
 
-    <!-- ===== PROJECT THUMBNAIL ===== -->
+    <!-- ===== PROJECT THUMBNAIL (AI generated comment) ===== -->
     {% if project.thumbnail %}
         <div class="project-thumbnail">
             <img src="{{ project.thumbnail.url }}" alt="{{ project.title }}">
@@ -25,13 +25,13 @@
     {% endif %}
     <!-- Displays main thumbnail if available -->
 
-    <!-- ===== LONG DESCRIPTION ===== -->
+    <!-- ===== LONG DESCRIPTION (AI generated comment) ===== -->
     {% if project.long_desc %}
         <p class="project-long-desc">{{ project.long_desc }}</p>
     {% endif %}
     <!-- Shows the full project description -->
 
-    <!-- ===== PROJECT GALLERY ===== -->
+    <!-- ===== PROJECT GALLERY (AI generated comment) ===== -->
     {% if project.images.all %}
         <div class="project-gallery">
             {% for img in project.images.all %}
@@ -43,7 +43,7 @@
     {% endif %}
     <!-- Loop through additional project images if any -->
 
-    <!-- ===== GITHUB / EXTERNAL LINK ===== -->
+    <!-- ===== GITHUB / EXTERNAL LINK (AI generated comment) ===== -->
     {% if project.github_url %}
         <p>
             <a href="{{ project.github_url }}" target="_blank" class="btn-primary">
@@ -53,7 +53,7 @@
     {% endif %}
     <!-- Displays GitHub or external link if provided -->
 
-    <!-- ===== TECHNOLOGIES USED ===== -->
+    <!-- ===== TECHNOLOGIES USED (AI generated comment) ===== -->
     {% if tech_list %}
         <div class="detail-section">
             <h3>Technologies Used</h3>
@@ -66,7 +66,7 @@
     {% endif %}
     <!-- Lists all technologies used in the project -->
 
-    <!-- ===== TAGS ===== -->
+    <!-- ===== TAGS ===== (AI generated comment) -->
     {% if tag_list %}
         <div class="project-tags">
             <h4>Tags:</h4>
@@ -79,7 +79,7 @@
     {% endif %}
     <!-- Displays any tags associated with the project -->
 
-    <!-- ===== BACK BUTTON ===== -->
+    <!-- ===== BACK BUTTON (AI generated comment) ===== -->
     <a href="/projects/" class="btn-secondary">Back to Projects</a>
     <!-- Link to return to the projects list -->
 

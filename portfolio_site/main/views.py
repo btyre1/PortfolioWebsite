@@ -1,6 +1,6 @@
 # portfolio_site/main/views.py
 
-from django.shortcuts import render, HttpResponse, get_object_or_404   # get_object_or_404 helps to handle 404 errors gracefully
+from django.shortcuts import render, HttpResponse, get_object_or_404   # get_object_or_404 helps to handle 404 errors better (AI assisted with learning)
 from .models import Project, Skill   # Forgot to add this import for Project model, which caused error
 
 # Create your views here.

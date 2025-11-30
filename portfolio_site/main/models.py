@@ -2,7 +2,7 @@
 
 from django.db import models
 
-# ===== SKILL MODEL =====
+# ===== SKILL MODEL ===== (AI generated comment)
 class Skill(models.Model):
     # Name of the skill (e.g., Python, Django)
     name = models.CharField(max_length=50)
@@ -14,7 +14,7 @@ class Skill(models.Model):
         return self.name
 
 
-# ===== PROJECT MODEL =====
+# ===== PROJECT MODEL ===== (AI generated comment)
 class Project(models.Model):
     # Project title
     title = models.CharField(max_length=200)
@@ -40,7 +40,7 @@ class Project(models.Model):
         return self.title
 
 
-# ===== PROJECT IMAGE MODEL =====
+# ===== PROJECT IMAGE MODEL ===== (AI generated comment)
 class ProjectImage(models.Model):
     # Link image to a project
     project = models.ForeignKey(Project, related_name='images', on_delete=models.CASCADE)

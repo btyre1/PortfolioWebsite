@@ -1,7 +1,7 @@
 /* portfolio_site/main/static/main/style.css */
 
 /* =========================================
-   GLOBAL RESET & BASE STYLES
+   GLOBAL RESET & BASE STYLES (AI generated comment)
    ========================================= */
 * {
     margin: 0;
@@ -18,7 +18,7 @@ body {
 }
 
 /* =========================================
-   NAVBAR
+   NAVBAR (AI generated comment)
    ========================================= */
 .navbar {
     display: flex;
@@ -55,7 +55,7 @@ body {
 }
 
 /* =========================================
-   PAGE WRAPPER
+   PAGE WRAPPER (AI generated comment)
    ========================================= */
 .content {
     padding: 2rem 3rem;
@@ -64,7 +64,7 @@ body {
 }
 
 /* =========================================
-   HERO SECTION
+   HERO SECTION (AI generated comment)
    ========================================= */
 .hero {
     text-align: center;
@@ -96,7 +96,7 @@ body {
 }
 
 /* =========================================
-   PROJECT CARD GRID
+   PROJECT CARD GRID (AI generated comment)
    ========================================= */
 .card-grid {
     display: grid;
@@ -163,7 +163,7 @@ body {
 }
 
 /* =========================================
-   PROJECT DETAIL PAGE
+   PROJECT DETAIL PAGE (AI generated comment)
    ========================================= */
 .detail-container {
     background: white;
@@ -228,7 +228,7 @@ body {
 }
 
 /* =========================================
-   SKILLS SECTION
+   SKILLS SECTION (AI generated comment)
    ========================================= */
 .skills-container {
     max-width: 800px;
@@ -262,7 +262,7 @@ body {
 }
 
 /* =========================================
-   FOOTER
+   FOOTER (AI generated comment)
    ========================================= */
 .footer {
     margin-top: 4rem;
@@ -275,7 +275,7 @@ body {
 }
 
 /* =========================================
-   PROJECT FILTER BUTTONS
+   PROJECT FILTER BUTTONS (AI generated comment)
    ========================================= */
 .filter-buttons {
     display: flex;
@@ -302,7 +302,7 @@ body {
 }
 
 /* =========================================
-   IMAGE LIGHTBOX
+   IMAGE LIGHTBOX (AI generated comment)
    ========================================= */
 #lightbox {
     position: fixed;
@@ -335,7 +335,7 @@ body {
 }
 
 /* =========================================
-   THEME TOGGLE BUTTON
+   THEME TOGGLE BUTTON (AI generated comment)
    ========================================= */
 .theme-toggle {
     border: none;
@@ -351,7 +351,7 @@ body {
 }
 
 /* =========================================
-   DARK MODE OVERRIDES
+   DARK MODE OVERRIDES (AI generated comment)
    ========================================= */
 body.dark {
     background: #121212;
@@ -420,7 +420,7 @@ body.dark #lightbox {
 }
 
 /* =========================================
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN (AI generated comment)
    ========================================= */
 @media (max-width: 768px) {
     .content {
