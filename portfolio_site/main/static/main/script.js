@@ -1,23 +1,35 @@
 // portfolio_site/main/static/main/script.js
 
-/* ===== PROJECT FILTER ===== */
+/* =========================================
+   MAIN SCRIPT
+   Handles project filtering, lightbox gallery, and dark mode toggle
+   ========================================= */
+
 document.addEventListener('DOMContentLoaded', () => {
+
+  /* ===== PROJECT FILTER ===== */
+  // Select all filter buttons and project cards
   const filterBtns = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('.card');
 
+  // Add click listener to each filter button
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      // update active class on buttons
+
+      // Remove 'active' class from all buttons and add it to clicked button
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
+      // Get filter from button data attribute (default to 'all')
       const filter = (btn.dataset.filter || 'all').toLowerCase();
 
+      // Show/hide cards based on filter
       cards.forEach(card => {
-        // dataset.tech might be comma separated; normalize: remove extra spaces
+        // Read comma-separated tech stack from dataset and normalize
         const techData = (card.dataset.tech || '').toLowerCase();
         const techs = techData.split(',').map(t => t.trim()).filter(Boolean);
 
+        // Show card if filter matches or if filter is 'all'
         if (filter === 'all' || techs.includes(filter)) {
           card.style.display = '';
         } else {
@@ -27,7 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ===== LIGHTBOX ===== */
+  /* ===== LIGHTBOX (Got idea from Dynamic Web Fundamentals class) ===== */ 
+  // Dynamically create lightbox element and append to body 
   const lightbox = document.createElement('div');
   lightbox.id = 'lightbox';
   lightbox.style.display = 'none';
@@ -42,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
   lightbox.style.zIndex = 2000;
   document.body.appendChild(lightbox);
 
+  // Clicking outside the image closes the lightbox
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) {
       lightbox.style.display = 'none';
@@ -49,16 +63,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Select all card images and make them clickable
   const cardImages = document.querySelectorAll('.card-thumbnail img');
   cardImages.forEach(img => {
     img.style.cursor = 'pointer';
+
     img.addEventListener('click', () => {
+      // Populate lightbox with clicked image and a close button
       lightbox.innerHTML = `
         <span class="close" style="position:absolute;top:20px;right:30px;font-size:2rem;color:#fff;cursor:pointer;">&times;</span>
         <img src="${img.src}" alt="" style="max-width:90%;max-height:80%;border-radius:8px;">
       `;
       lightbox.style.display = 'flex';
 
+      // Close button inside lightbox
       const close = lightbox.querySelector('.close');
       if (close) close.addEventListener('click', () => {
         lightbox.style.display = 'none';
@@ -70,22 +88,23 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ===== DARK MODE TOGGLE ===== */
   const toggleBtn = document.getElementById('theme-toggle');
 
-  // safety: if toggleBtn not present, skip dark-mode setup
+  // Only run if toggle button exists
   if (toggleBtn) {
-    // apply saved theme on load
+    // Apply saved theme on page load
     const saved = localStorage.getItem('theme');
     if (saved === 'dark') {
       document.body.classList.add('dark');
-      toggleBtn.textContent = '☀️';
+      toggleBtn.textContent = '☀️'; // sun icon if dark
     } else {
-      toggleBtn.textContent = '🌙';
+      toggleBtn.textContent = '🌙'; // moon icon if light
     }
 
+    // Toggle dark mode on button click
     toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
+      document.body.classList.toggle('dark'); // toggle class
       const isDark = document.body.classList.contains('dark');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      toggleBtn.textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light'); // save preference
+      toggleBtn.textContent = isDark ? '☀️' : '🌙'; // update icon
     });
   }
 });

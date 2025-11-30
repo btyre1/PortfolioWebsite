@@ -1,6 +1,8 @@
 /* portfolio_site/main/static/main/style.css */
 
-/* ===== BASIC RESET ===== */
+/* =========================================
+   GLOBAL RESET & BASE STYLES
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -8,13 +10,16 @@
     font-family: 'Inter', sans-serif;
 }
 
+/* Default light theme background/text */
 body {
     background: #f4f5f7;
     color: #1e1e1e;
     line-height: 1.6;
 }
 
-/* ===== NAVBAR ===== */
+/* =========================================
+   NAVBAR
+   ========================================= */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -22,9 +27,9 @@ body {
     padding: 1rem 3rem;
     background: #ffffff;
     border-bottom: 1px solid #ddd;
-    position: sticky;
+    position: sticky;   /* keeps navbar at top on scroll */
     top: 0;
-    z-index: 1000;
+    z-index: 1000;      /* ensures it stays above other elements */
 }
 
 .nav-brand {
@@ -49,14 +54,18 @@ body {
     color: #4a78ff;
 }
 
-/* ===== MAIN CONTENT ===== */
+/* =========================================
+   PAGE WRAPPER
+   ========================================= */
 .content {
     padding: 2rem 3rem;
-    max-width: 1200px;
+    max-width: 1200px;  /* keeps readable width */
     margin: auto;
 }
 
-/* ===== HERO SECTION ===== */
+/* =========================================
+   HERO SECTION
+   ========================================= */
 .hero {
     text-align: center;
     padding: 4rem 0;
@@ -72,6 +81,7 @@ body {
     margin-bottom: 2rem;
 }
 
+/* Primary CTA button */
 .btn-primary {
     padding: 0.7rem 1.5rem;
     background: #4a78ff;
@@ -85,13 +95,16 @@ body {
     background: #3a61d9;
 }
 
-/* ===== CARD GRID ===== */
+/* =========================================
+   PROJECT CARD GRID
+   ========================================= */
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 1.5rem;
+    gap: 1.5rem; /* spacing between cards */
 }
 
+/* Single card */
 .card {
     background: white;
     padding: 1.4rem;
@@ -100,6 +113,7 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Hover elevation effect */
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 20px rgba(0,0,0,0.12);
@@ -109,25 +123,29 @@ body {
     margin-bottom: 0.5rem;
 }
 
+/* Card image wrapper */
 .card-thumbnail {
     width: 100%;
-    height: 180px; 
+    height: 180px;
     overflow: hidden;
     border-radius: 8px;
 }
 
+/* Card image itself */
 .card-thumbnail img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* keeps aspect ratio, fills container */
+    object-fit: cover;
     display: block;
     transition: transform 0.3s ease;
 }
 
+/* Slight zoom on hover */
 .card:hover .card-thumbnail img {
     transform: scale(1.05);
 }
 
+/* Secondary button typically on project cards */
 .btn-secondary {
     display: inline-block;
     margin-top: 1rem;
@@ -144,7 +162,9 @@ body {
     color: white;
 }
 
-/* ===== PROJECT DETAIL PAGE ===== */
+/* =========================================
+   PROJECT DETAIL PAGE
+   ========================================= */
 .detail-container {
     background: white;
     padding: 2rem;
@@ -153,16 +173,19 @@ body {
     margin: 2rem auto;
 }
 
+/* Project title */
 .detail-container h1 {
     margin-bottom: 1.5rem;
     font-size: 2.2rem;
 }
 
+/* Thumbnail + gallery areas */
 .project-thumbnail,
 .project-gallery {
     margin-bottom: 2rem;
 }
 
+/* Project detail images */
 .project-thumbnail img,
 .project-gallery img {
     width: 100%;
@@ -174,6 +197,7 @@ body {
     margin: 1rem auto;
 }
 
+/* Longer description paragraph */
 .project-long-desc {
     margin-bottom: 2rem;
     font-size: 1.1rem;
@@ -196,15 +220,16 @@ body {
     margin-bottom: 0.5rem;
 }
 
-/* Add spacing between GitHub link and sections */
+/* Spacing between sections */
 .detail-container > p,
 .detail-section,
 .project-tags {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
 }
 
-/* ===== SKILLS ===== */
+/* =========================================
+   SKILLS SECTION
+   ========================================= */
 .skills-container {
     max-width: 800px;
     margin: 2rem auto;
@@ -214,11 +239,13 @@ body {
     margin-bottom: 1.5rem;
 }
 
+/* Skill label */
 .skill-name {
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
 
+/* Background bar */
 .skill-bar {
     background: #e1e4ea;
     height: 12px;
@@ -226,6 +253,7 @@ body {
     overflow: hidden;
 }
 
+/* Animated fill inside bar */
 .skill-fill {
     height: 100%;
     background: #4a78ff;
@@ -233,7 +261,9 @@ body {
     transition: width 1s ease-in-out;
 }
 
-/* ===== FOOTER ===== */
+/* =========================================
+   FOOTER
+   ========================================= */
 .footer {
     margin-top: 4rem;
     text-align: center;
@@ -244,12 +274,14 @@ body {
     border-top: 1px solid #ddd;
 }
 
-/* ===== FILTER BUTTONS ===== */
+/* =========================================
+   PROJECT FILTER BUTTONS
+   ========================================= */
 .filter-buttons {
     display: flex;
     gap: 0.8rem;
     margin-bottom: 2rem;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* wrap nicely on mobile */
 }
 
 .filter-btn {
@@ -262,30 +294,37 @@ body {
     transition: all 0.3s ease;
 }
 
+/* Selected + hover state */
 .filter-btn:hover,
 .filter-btn.active {
     background: #4a78ff;
     color: white;
 }
 
-/* ===== LIGHTBOX MODAL ===== */
+/* =========================================
+   IMAGE LIGHTBOX
+   ========================================= */
 #lightbox {
     position: fixed;
-    display: none;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
+    display: none;            /* shown via JS */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(0,0,0,0.8);
-    justify-content: center;
+    justify-content: center;  /* centers image */
     align-items: center;
     z-index: 2000;
 }
 
+/* Zoomed image inside modal */
 #lightbox img {
     max-width: 90%;
     max-height: 80%;
     border-radius: 8px;
 }
 
+/* Close icon */
 #lightbox span.close {
     position: absolute;
     top: 20px;
@@ -295,11 +334,13 @@ body {
     cursor: pointer;
 }
 
-/* ===== THEME TOGGLE BUTTON ===== */
+/* =========================================
+   THEME TOGGLE BUTTON
+   ========================================= */
 .theme-toggle {
     border: none;
     background: transparent;
-    font-size: 1.4rem;
+    font-size: 1.4rem;  /* icon size */
     cursor: pointer;
     margin-left: 1rem;
     transition: transform 0.3s ease;
@@ -309,17 +350,21 @@ body {
     transform: scale(1.1);
 }
 
-/* ===== DARK MODE ===== */
+/* =========================================
+   DARK MODE OVERRIDES
+   ========================================= */
 body.dark {
     background: #121212;
     color: #e5e5e5;
 }
 
+/* Navbar in dark mode */
 body.dark .navbar {
     background: #1f1f1f;
     border-bottom-color: #333;
 }
 
+/* Navbar links */
 body.dark .nav-links a {
     color: #e5e5e5;
 }
@@ -328,22 +373,20 @@ body.dark .nav-links a:hover {
     color: #7aa2ff;
 }
 
-body.dark .card {
-    background: #1a1a1a;
-    box-shadow: 0 2px 12px rgba(255,255,255,0.05);
-}
-
+/* Cards + project detail background */
+body.dark .card,
 body.dark .detail-container {
     background: #1a1a1a;
     box-shadow: 0 2px 12px rgba(255,255,255,0.05);
 }
 
+/* Footer background */
 body.dark .footer {
     background: #1f1f1f;
     border-top-color: #333;
 }
 
-/* Buttons */
+/* Buttons in dark mode */
 body.dark .btn-primary {
     background: #6c8cff;
 }
@@ -358,7 +401,7 @@ body.dark .btn-secondary:hover {
     color: #fff;
 }
 
-/* Filter buttons */
+/* Filter buttons in dark mode */
 body.dark .filter-btn {
     background: #1f1f1f;
     border-color: #6c8cff;
@@ -371,12 +414,14 @@ body.dark .filter-btn:hover {
     color: #fff;
 }
 
-/* Lightbox */
+/* Dimmed modal in dark mode */
 body.dark #lightbox {
     background: rgba(255,255,255,0.1);
 }
 
-/* ===== RESPONSIVE ===== */
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
 @media (max-width: 768px) {
     .content {
         padding: 1rem 2rem;
@@ -387,7 +432,7 @@ body.dark #lightbox {
     }
 
     .card-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* single column on mobile */
     }
 
     .project-thumbnail img,
@@ -395,3 +440,4 @@ body.dark #lightbox {
         max-width: 100%;
     }
 }
+
