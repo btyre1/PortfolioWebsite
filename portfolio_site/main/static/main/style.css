@@ -295,6 +295,87 @@ body {
     cursor: pointer;
 }
 
+/* ===== THEME TOGGLE BUTTON ===== */
+.theme-toggle {
+    border: none;
+    background: transparent;
+    font-size: 1.4rem;
+    cursor: pointer;
+    margin-left: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* ===== DARK MODE ===== */
+body.dark {
+    background: #121212;
+    color: #e5e5e5;
+}
+
+body.dark .navbar {
+    background: #1f1f1f;
+    border-bottom-color: #333;
+}
+
+body.dark .nav-links a {
+    color: #e5e5e5;
+}
+
+body.dark .nav-links a:hover {
+    color: #7aa2ff;
+}
+
+body.dark .card {
+    background: #1a1a1a;
+    box-shadow: 0 2px 12px rgba(255,255,255,0.05);
+}
+
+body.dark .detail-container {
+    background: #1a1a1a;
+    box-shadow: 0 2px 12px rgba(255,255,255,0.05);
+}
+
+body.dark .footer {
+    background: #1f1f1f;
+    border-top-color: #333;
+}
+
+/* Buttons */
+body.dark .btn-primary {
+    background: #6c8cff;
+}
+
+body.dark .btn-secondary {
+    border-color: #6c8cff;
+    color: #6c8cff;
+}
+
+body.dark .btn-secondary:hover {
+    background: #6c8cff;
+    color: #fff;
+}
+
+/* Filter buttons */
+body.dark .filter-btn {
+    background: #1f1f1f;
+    border-color: #6c8cff;
+    color: #6c8cff;
+}
+
+body.dark .filter-btn.active,
+body.dark .filter-btn:hover {
+    background: #6c8cff;
+    color: #fff;
+}
+
+/* Lightbox */
+body.dark #lightbox {
+    background: rgba(255,255,255,0.1);
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .content {
