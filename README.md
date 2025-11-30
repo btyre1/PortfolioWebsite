@@ -39,7 +39,7 @@ The purpose of building this portfolio was to practice implementing CRUD functio
 # Future Work
 
 * Add a contact form with email integration
-* Improve accessibility and mobile responsiveness
+* Add a contact, experience, achievements, and education page
+* Add more information about me 
+* Improve accessibility
 * Add animations and interactive elements to enhance user experience
-* Implement user authentication to allow editing of projects from a dashboard
-* Incorporate an experience page
