@@ -400,27 +400,27 @@ body.dark .btn-primary:hover {
 }
 
 body.dark .btn-secondary {
-    border-color: #3b5ed9;
-    background: #000000;
-    color: #3b5ed9;
+    background: #3b5ed9;
+    color: #ffffff;
+    border-color: #ffffff;
 }
 
 body.dark .btn-secondary:hover {
-    background: #3b5ed9;
-    color: #fff;
+    background: #ffffff;
+    color: #000000;
 }
 
 /* Filter buttons in dark mode */
 body.dark .filter-btn {
-    background: #000000;
-    border-color: #3a61d9;
-    color: #3a61d9;
+    background: #3b5ed9;
+    border-color: #ffffff;
+    color: #ffffff;
 }
 
 body.dark .filter-btn.active,
 body.dark .filter-btn:hover {
-    background: #6c8cff;
-    color: #fff;
+    background: #ffffff;
+    color: #000000;
 }
 
 /* Dimmed modal in dark mode */
@@ -449,4 +449,3 @@ body.dark #lightbox {
         max-width: 100%;
     }
 }
-
