@@ -1,1 +1,1 @@
-web: gunicorn portfolio_site.wsgi
+web: cd portfolio_site && gunicorn portfolio_site.wsgi
