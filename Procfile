@@ -1,1 +1,1 @@
-web: cd portfolio_site && gunicorn portfolio_site.wsgi
+web: gunicorn portfolio_site.wsgi --bind 0.0.0.0:$PORT
