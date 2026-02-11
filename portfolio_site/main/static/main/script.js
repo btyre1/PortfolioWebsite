@@ -5,6 +5,7 @@
    Handles project filtering, lightbox gallery, and dark mode toggle (AI generated comment)
    ========================================= */
 
+
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ===== PROJECT FILTER (AI generated comment) ===== */

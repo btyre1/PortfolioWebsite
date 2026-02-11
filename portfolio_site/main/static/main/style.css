@@ -1,5 +1,6 @@
 /* portfolio_site/main/static/main/style.css */
 
+{% load static %}
 /* =========================================
    GLOBAL RESET & BASE STYLES (AI generated comment)
    ========================================= */

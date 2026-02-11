@@ -1,5 +1,7 @@
 <!-- portfolio_site/main/templates/main/projects.html -->
 
+{% load static %}
+
 {% extends "main/base.html" %}
 <!-- Extend the base template to keep consistent navbar, footer, and styling -->
 
@@ -22,7 +24,7 @@
         <!-- Project Thumbnail -->
         {% if project.thumbnail %}
         <div class="project-card-img">
-            <img src="{{ project.thumbnail.url }}" alt="{{ project.title }}">
+            <img src="{% static 'main/images/' %}{{ project.thumbnail }}" alt="{{ project.title }}">
         </div>
         {% endif %}
         <!-- Display project image if available -->
